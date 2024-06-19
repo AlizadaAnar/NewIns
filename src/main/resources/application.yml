@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: jdbc:postgresql://viaduct.proxy.rlwy.net:23825/railway
+    url: jdbc:postgresql://monorail.proxy.rlwy.net:41797/railway
     username: postgres
-    password: qwJulmFxfmwvenphpsSmFmpgNBVeZzFs
+    password: yxTpwxGrgtztFUqPwouseLaWbHeDaiHs
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
@@ -21,3 +21,6 @@ application:
       expiration: 86400000 # a day
       refresh-token:
         expiration: 604800000 # 7 days
+
+
+
