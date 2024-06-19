@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/jwt_security
+    url: jdbc:postgresql://monorail.proxy.rlwy.net:55988/railway
     username: postgres
-    password: 12345
+    password: CyzuRWYiNRkRNUnDEFppKCQEOVhIkBkr
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
@@ -13,7 +13,7 @@ spring:
         format_sql: true
     database: postgresql
     database-platform: org.hibernate.dialect.PostgreSQLDialect
-
+ 
 application:
   security:
     jwt:
