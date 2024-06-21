@@ -17,8 +17,8 @@ public class ProductController {
     @Autowired
     private ProductService productService;
 
-    //    @CrossOrigin(origins = "https://newapphere-ffa9a547cef0.herokuapp.com/")
-    @CrossOrigin(origins = "http://localhost:5173")
+    //        @CrossOrigin(origins = "https://newapphere-ffa9a547cef0.herokuapp.com/")
+    @CrossOrigin(origins = "http://localhost:5173", allowCredentials = "true", allowedHeaders = {"Authorization", "Content-Type"})
     @GetMapping("/user/product")
     public ResponseEntity<Product> getProductForAuthenticatedUser() {
         Integer userId = (Integer) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
@@ -27,7 +27,7 @@ public class ProductController {
     }
 
 
-    @CrossOrigin(origins = "http://localhost:5173")
+    @CrossOrigin(origins = "http://localhost:5173", allowCredentials = "true", allowedHeaders = {"Authorization", "Content-Type"})
     @PostMapping("/user/product")
     public CompletableFuture<ResponseEntity<Product>> createProduct(@RequestBody Product product) {
         Integer userId = (Integer) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
