@@ -16,7 +16,7 @@ public class AuthenticationController {
 
     private final AuthenticationService service;
 
-    @CrossOrigin(origins = "http://localhost:5174")
+    @CrossOrigin(origins = "http://localhost:5173")
     @PostMapping("/register")
     public ResponseEntity<AuthenticationResponse> register(
             @RequestBody RegisterRequest request
@@ -24,7 +24,7 @@ public class AuthenticationController {
         return ResponseEntity.ok(service.register(request));
     }
 
-    @CrossOrigin(origins = "http://localhost:5174")
+    @CrossOrigin(origins = "http://localhost:5173")
     @PostMapping("/authenticate")
     public ResponseEntity<AuthenticationResponse> authenticate(
             @RequestBody AuthenticationRequest request
@@ -32,7 +32,7 @@ public class AuthenticationController {
         return ResponseEntity.ok(service.authenticate(request));
     }
 
-    @CrossOrigin(origins = "http://localhost:5174")
+    @CrossOrigin(origins = "http://localhost:5173")
     @PostMapping("/refresh-token")
     public void refreshToken(
             HttpServletRequest request,
@@ -41,7 +41,7 @@ public class AuthenticationController {
         service.refreshToken(request, response);
     }
 
-    @CrossOrigin(origins = "http://localhost:5174")
+    @CrossOrigin(origins = "http://localhost:5173")
     @GetMapping("/takeAll")
     public String getAll() {
         return "hi";
