@@ -27,8 +27,6 @@ public class ProductService {
     }
 
 
-
-
     @Async
     public CompletableFuture<Product> createProductAsync(Integer userId, Product product) {
         return CompletableFuture.supplyAsync(() -> {
@@ -48,11 +46,11 @@ public class ProductService {
 
     public Product updateProduct(Integer id, Product productDetails) {
         Product product = getProductById(id);
+        product.setTitle(productDetails.getTitle());
         product.setUrl(productDetails.getUrl());
         product.setPrice(productDetails.getPrice());
         product.setProductDesc(productDetails.getProductDesc());
         product.setAddress(productDetails.getAddress());
-        product.setNumber(productDetails.getNumber());
         return productRepository.save(product);
     }
 

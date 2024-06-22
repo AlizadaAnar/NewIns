@@ -24,11 +24,11 @@ public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    private String title;
     private String url;
     private String price;
     private String productDesc;
     private String address;
-    private String number;
 
     @ManyToOne
     @JoinColumn(name = "user_id")
