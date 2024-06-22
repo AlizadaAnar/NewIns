@@ -11,12 +11,12 @@ import java.io.IOException;
 @RestController
 @RequestMapping("/api/v1/auth")
 @RequiredArgsConstructor
-@CrossOrigin(origins = "https://oragnic-1tjq.vercel.app/", allowCredentials = "true", allowedHeaders = {"Authorization", "Content-Type"})
+@CrossOrigin(origins = "https://oragnic-1tjq.vercel.app", allowCredentials = "true", allowedHeaders = {"Authorization", "Content-Type"})
 public class AuthenticationController {
 
     private final AuthenticationService service;
 
-    @CrossOrigin(origins = "https://oragnic-1tjq.vercel.app/")
+    @CrossOrigin(origins = "https://oragnic-1tjq.vercel.app")
     @PostMapping("/register")
     public ResponseEntity<AuthenticationResponse> register(
             @RequestBody RegisterRequest request
@@ -24,7 +24,7 @@ public class AuthenticationController {
         return ResponseEntity.ok(service.register(request));
     }
 
-    @CrossOrigin(origins = "https://oragnic-1tjq.vercel.app/")
+    @CrossOrigin(origins = "https://oragnic-1tjq.vercel.app")
     @PostMapping("/authenticate")
     public ResponseEntity<AuthenticationResponse> authenticate(
             @RequestBody AuthenticationRequest request
@@ -32,7 +32,7 @@ public class AuthenticationController {
         return ResponseEntity.ok(service.authenticate(request));
     }
 
-    @CrossOrigin(origins = "https://oragnic-1tjq.vercel.app/")
+    @CrossOrigin(origins = "https://oragnic-1tjq.vercel.app")
     @PostMapping("/refresh-token")
     public void refreshToken(
             HttpServletRequest request,
@@ -41,7 +41,7 @@ public class AuthenticationController {
         service.refreshToken(request, response);
     }
 
-    @CrossOrigin(origins = "https://oragnic-1tjq.vercel.app/")
+    @CrossOrigin(origins = "https://oragnic-1tjq.vercel.app")
     @GetMapping("/takeAll")
     public String getAll() {
         return "hi";
