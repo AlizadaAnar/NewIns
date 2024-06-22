@@ -17,6 +17,7 @@ public class ProductController {
     @Autowired
     private ProductService productService;
 
+
     //        @CrossOrigin(origins = "https://newapphere-ffa9a547cef0.herokuapp.com/")
     @CrossOrigin(origins = "https://oragnic-1tjq.vercel.app/", allowCredentials = "true", allowedHeaders = {"Authorization", "Content-Type"})
     @GetMapping("/user/product")
