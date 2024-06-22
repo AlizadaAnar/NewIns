@@ -11,14 +11,14 @@ import java.util.concurrent.CompletableFuture;
 
 @RestController
 @RequestMapping("/products")
-@CrossOrigin(origins = "https://newapphere-ffa9a547cef0.herokuapp.com/", allowCredentials = "true", allowedHeaders = {"Authorization", "Content-Type"})
+@CrossOrigin(origins = "https://oragnic-1tjq.vercel.app/", allowCredentials = "true", allowedHeaders = {"Authorization", "Content-Type"})
 public class ProductController {
 
     @Autowired
     private ProductService productService;
 
     //        @CrossOrigin(origins = "https://newapphere-ffa9a547cef0.herokuapp.com/")
-    @CrossOrigin(origins = "http://localhost:5173", allowCredentials = "true", allowedHeaders = {"Authorization", "Content-Type"})
+    @CrossOrigin(origins = "https://oragnic-1tjq.vercel.app/", allowCredentials = "true", allowedHeaders = {"Authorization", "Content-Type"})
     @GetMapping("/user/product")
     public ResponseEntity<Product> getProductForAuthenticatedUser() {
         Integer userId = (Integer) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
@@ -27,7 +27,7 @@ public class ProductController {
     }
 
 
-    @CrossOrigin(origins = "http://localhost:5173", allowCredentials = "true", allowedHeaders = {"Authorization", "Content-Type"})
+    @CrossOrigin(origins = "https://oragnic-1tjq.vercel.app/", allowCredentials = "true", allowedHeaders = {"Authorization", "Content-Type"})
     @PostMapping("/user/product")
     public CompletableFuture<ResponseEntity<Product>> createProduct(@RequestBody Product product) {
         Integer userId = (Integer) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
@@ -40,25 +40,25 @@ public class ProductController {
                 });
     }
 
-    @CrossOrigin(origins = "http://localhost:5173")
+    @CrossOrigin(origins = "https://oragnic-1tjq.vercel.app/")
     @GetMapping("/takeAll")
     public ResponseEntity<List<Product>> getAllProducts() {
         return ResponseEntity.ok(productService.getAllProducts());
     }
 
-    @CrossOrigin(origins = "http://localhost:5173")
+    @CrossOrigin(origins = "https://oragnic-1tjq.vercel.app/")
     @GetMapping("/{id}")
     public ResponseEntity<Product> getProductById(@PathVariable Integer id) {
         return ResponseEntity.ok(productService.getProductById(id));
     }
 
-    @CrossOrigin(origins = "http://localhost:5173")
+    @CrossOrigin(origins = "https://oragnic-1tjq.vercel.app/")
     @PutMapping("/{id}")
     public ResponseEntity<Product> updateProduct(@PathVariable Integer id, @RequestBody Product productDetails) {
         return ResponseEntity.ok(productService.updateProduct(id, productDetails));
     }
 
-    @CrossOrigin(origins = "http://localhost:5173")
+    @CrossOrigin(origins = "https://oragnic-1tjq.vercel.app/")
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteProduct(@PathVariable Integer id) {
         productService.deleteProduct(id);
